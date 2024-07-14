@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Велий-Каталог</title>
+    <link href="{{ url_for('static', filename='logo.png') }}" rel="icon" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='StyleSheet2Catalog.css') }}">
+    <script>
+    function search() {
+        var searchQuery = document.getElementById("searchInput").value.trim();
+        if (searchQuery) {
+            fetch("/search", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ search: searchQuery })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Очистка содержимого вкладок перед добавлением новых данных
+                document.getElementById("presentations").innerHTML = "";
+                document.getElementById("wordDocs").innerHTML = "";
+                document.getElementById("pdfs").innerHTML = "";
+
+                // Вставка данных в соответствующие вкладки
+                data.presentation_filenames.forEach(item => {
+                    document.getElementById("presentations").innerHTML += "<li>" + item.title + "</li>";
+                });
+
+                data.word_doc_filenames.forEach(item => {
+                    document.getElementById("wordDocs").innerHTML += "<li>" + item.title + "</li>";
+                });
+
+                data.pdf_filenames.forEach(item => {
+                    document.getElementById("pdfs").innerHTML += "<li>" + item.title + "</li>";
+                });
+            })
+            .catch(error => console.error("Ошибка при выполнении поиска: ", error));
+        }
+    }
+    </script>
+    <script>
+    window.onload = function() {
+        if (window.performance && window.performance.navigation.type === window.performance.navigation.TYPE_RELOAD) {
+            window.location.href = "/catalog"; // Перенаправление на страницу каталога при обновлении
+        }
+    }
+    </script>
+</head>
+<body>
+<nav role="navigation">
+    <div id="menuToggle">
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul id="menu">
+            <a href="{{ url_for('main') }}"><div class="logo"><p class="logoP">велий</p></div></a>
+            <a href="{{ url_for('support') }}" class="buttom2">о нас</a>
+            <a href="{{ url_for('trends') }}" class="buttom2">течения</a>
+            <a href="{{ url_for('presentations') }}" class="buttom2">каталог</a>
+            <a href="{{ url_for('login') }}"><div class="ava"></div></a>
+            <div class=".searchB">
+                <form action="/search" method="POST">
+                    <input type="text" id="searchInput" name="search" placeholder="поиск">
+                    <button class="search-button" type="submit">Поиск</button>
+                </form>
+                <div id="searchResults" class="search-results"></div>
+                <div class="search-results" {% if not filenames %} style="display: none;" {% endif %}>
+                    {% if filenames %}
+                    <ul>
+                        {% for filename in filenames %}
+                        <li>{{ filename }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    <p>Ничего не найдено</p>
+                    {% endif %}
+                </div>
+            </div>
+        </ul>
+    </div>
+</nav>
+<span class="heder1">
+    <a href="{{ url_for('main') }}"><div class="logo"><p class="logoP">велий</p></div></a>
+    <div class="about"><a href="{{ url_for('support') }}" class="buttom2">о нас</a></div>
+    <div class="trends"><a href="{{ url_for('trends') }}" class="buttom2">течения</a></div>
+    <div class="catalog"><a href="{{ url_for('presentations') }}" class="buttom1">каталог</a></div>
+    <div class="search">
+        <form action="/search" method="POST">
+            <input type="text" id="searchInput" name="search" placeholder="поиск">
+            <button class="search-button" type="submit">Поиск</button>
+        </form>
+        <div id="searchResults" class="search-results"></div>
+        <div class="search-results" {% if not filenames %} style="display: none;" {% endif %}>
+            {% if filenames %}
+            <ul>
+                {% for filename in filenames %}
+                <li>{{ filename }}</li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <p>Ничего не найдено</p>
+            {% endif %}
+        </div>
+    </div>
+    <a href="{{ url_for('login') }}"><div class="ava"></div></a>
+</span>
+<div class="container mt-5">
+    <section>
+        <ul class="nav nav-tabs" id="fileTabs" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="presentations-tab" data-toggle="tab" href="#presentations" role="tab" aria-controls="presentations" aria-selected="true">Презентации</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="word-docs-tab" data-toggle="tab" href="#wordDocs" role="tab" aria-controls="wordDocs" aria-selected="false">Документы Word</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="pdfs-tab" data-toggle="tab" href="#pdfs" role="tab" aria-controls="pdfs" aria-selected="false">PDF</a>
+            </li>
+        </ul>
+        <div class="tab-content mt-3" id="fileTabsContent">
+            <div class="tab-pane fade show active" id="presentations" role="tabpanel" aria-labelledby="presentations-tab">
+                <h2 class="mb-3">Презентации</h2>
+                <ul class="list-group">
+                    {% for item in presentation_filenames %}
+                    <li class="list-group-item">
+                        <a href="{{ url_for('download_file', filename=item.filename) }}" download>{{ item.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="tab-pane fade" id="wordDocs" role="tabpanel" aria-labelledby="word-docs-tab">
+                <h2 class="mb-3">Документы Word</h2>
+                <ul class="list-group">
+                    {% for item in word_doc_filenames %}
+                    <li class="list-group-item">
+                        <a href="{{ url_for('download_file', filename=item.filename) }}" download>{{ item.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="tab-pane fade" id="pdfs" role="tabpanel" aria-labelledby="pdfs-tab">
+                <h2 class="mb-3">PDF-файлы</h2>
+                <ul class="list-group">
+                    {% for item in pdf_filenames %}
+                    <li class="list-group-item">
+                        <a href="{{ url_for('download_file', filename=item.filename) }}" download>{{ item.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

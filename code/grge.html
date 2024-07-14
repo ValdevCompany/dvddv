@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='avabig.png') }}" rel="icon" />
+    <title>Велий-Вы</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='StyleSheet4grge.css') }}">
+	<script>
+    function validateForm(fileInputId) {
+        var fileInput = document.getElementById(fileInputId);
+        var file = fileInput.files[0];
+        
+        if (!file) {
+            alert('Выберите файл для загрузки.');
+            return false;
+        }
+        
+        return true;
+    }
+</script>
+</head>
+<body>
+<nav role="navigation">
+        <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+                <a href="{{ url_for('main') }}"><div class="logo"><p class="logoP">велий</p></div></a>
+                <a href="{{ url_for('support') }}" class="buttom2">о нас</a>
+                <a href="{{ url_for('trends') }}" class="buttom2">течения</a>
+                <a href="{{ url_for('presentations') }}" class="buttom2">каталог</a>
+                <a href="{{ url_for('login') }}"><div class="ava"></div></a>
+            </ul>
+        </div>
+    </nav>
+    <span class="heder1">
+        <a href="{{ url_for('main') }}"><div class="logo"><p class="logoP">велий</p></div></a>
+        <div class="about"><a href="{{ url_for('support') }}" class="buttom2">о нас</a></div>
+        <div class="trends"><a href="{{ url_for('trends') }}" class="buttom2">течения</a></div>
+        <div class="catalog"><a href="{{ url_for('presentations') }}" class="buttom2">каталог</a></div>
+
+
+        <a href="{{ url_for('login') }}"><div class="ava"></div></a>
+    </span>
+    <div class="data">
+        <div class="datainside">
+            <div class="block1">
+                <img class="profile" />
+                <div class="block">
+                    <p class="Z">{{ username }}</p>
+                    <h1> подписчика</h1>
+                    <h1> подписки</h1>
+                </div>
+                <div class="block2">
+                    <div>
+                        <p class="Pz">лайки</p>
+                        <h1> лайков</h1>
+                        <p class="Pz">вами загружено</p>
+                        <h1> публикаций</h1>
+                        <p class="Pz">просмотры</p>
+                        <h1> просмотров</h1>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+
+        <section>
+            <h2 class="Pz2">загрузка файлов</h2>
+
+            <form action="/upload" method="post" enctype="multipart/form-data" class="DownloadFile">
+                <div class="form-group">
+                    <label for="wordFile"><h1>Загрузить файл Word:</h1></label>
+                    <input type="file" class="form-control-file" id="wordFile" name="wordFile" accept=".doc, .docx,.rtf" placeholder="+">
+                </div>
+
+                <div class="form-group">
+                    <label for="presentationFile"><h1>Загрузить презентацию:</h1></label>
+                    <input type="file" class="form-control-file" id="presentationFile" name="presentationFile" accept=".ppt, .pptx,.pptm">
+                </div>
+                <div class="form-group">
+                    <label for="presentationFile"><h1>Загрузить Pdf:</h1></label>
+                    <input type="file" class="form-control-file" id="pdfFile" name="pdfFile" accept=".pdf">
+                </div>
+
+
+                <button type="submit" class="btn btn-primary">загрузить</button>
+            </form>
+        </section>
+		 <section class="mt-4">
+    <h2 class="Pz2">ваши файлы</h2>
+
+           <ul>
+        {% for file_tuple in filenames %}
+            <li>{{ file_tuple[0] }}</li>
+        {% endfor %}
+    </ul>
+</section>
+    </div>
+
+    <div class="footer">
+        <p class="Pz1">
+            все права защищены 2024 ©
+        </p>
+        <p class="Pz1">
+            Машанский Богдан ©
+        </p>
+        <p class="Pz1">
+            Балтабаев Алишер ©
+        </p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

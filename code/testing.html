@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Детали файла</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            background-color: #f0f2f5;
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .file-details {
+            max-width: 800px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+        .file-info {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .file-cover {
+            max-width: 150px;
+            border-radius: 12px;
+            margin-right: 20px;
+        }
+        .file-description {
+            margin: 20px 0;
+            color: #555;
+        }
+        .file-actions {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        .btn-primary {
+            background: #007bff;
+            color: #ffffff;
+        }
+        .btn-success {
+            background: #28a745;
+            color: #ffffff;
+        }
+        .btn-outline-primary {
+            background: #ffffff;
+            border: 2px solid #007bff;
+            color: #007bff;
+            display: flex;
+            align-items: center;
+        }
+        .btn-outline-primary i {
+            margin-right: 5px;
+        }
+        .comments {
+            margin-top: 30px;
+        }
+        .comments h4 {
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        .comment {
+            background: #f0f2f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .comment p {
+            margin: 0;
+        }
+        .comment strong {
+            color: #333;
+        }
+        .comment-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .comment-form textarea {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            resize: vertical;
+            min-height: 100px;
+            font-family: 'Roboto', sans-serif;
+        }
+        .comment-form button {
+            align-self: flex-end;
+            padding: 10px 20px;
+            background: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+<div class="file-details">
+    <div class="file-info">
+        <img src="https://via.placeholder.com/150" alt="Обложка файла" class="file-cover">
+        <div>
+            <h2>Название файла</h2>
+            <p><strong>Автор:</strong> Имя автора</p>
+            <p class="file-description">Здесь будет описание файла, которое может быть достаточно длинным и содержательным. Оно описывает основные аспекты и особенности файла.</p>
+        </div>
+    </div>
+    <div class="file-actions">
+        <a href="#" class="btn btn-primary">Посмотреть</a>
+        <a href="#" class="btn btn-success">Скачать</a>
+        <button class="btn btn-outline-primary"><i class="fa fa-thumbs-up"></i> <span class="like-count">10</span></button>
+    </div>
+    <div class="comments">
+        <h4>Комментарии</h4>
+        <div class="comment">
+            <p><strong>Пользователь1:</strong> Очень полезный файл!</p>
+        </div>
+        <div class="comment">
+            <p><strong>Пользователь2:</strong> Спасибо за информацию.</p>
+        </div>
+        <div class="comment">
+            <p><strong>Пользователь3:</strong> Отличная работа!</p>
+        </div>
+    </div>
+    <div class="comment-form">
+        <textarea id="comment-text" placeholder="Напишите комментарий..."></textarea>
+        <button onclick="addComment()">Отправить</button>
+    </div>
+</div>
+
+<script>
+    document.querySelector('.btn-outline-primary').addEventListener('click', function() {
+        var likeCountElem = this.querySelector('.like-count');
+        var currentCount = parseInt(likeCountElem.textContent);
+        likeCountElem.textContent = currentCount + 1;
+    });
+
+    function addComment() {
+        var commentText = document.getElementById('comment-text').value;
+        if (commentText.trim() !== "") {
+            var commentsSection = document.querySelector('.comments');
+            var newComment = document.createElement('div');
+            newComment.classList.add('comment');
+            newComment.innerHTML = `<p><strong>Новый пользователь:</strong> ${commentText}</p>`;
+            commentsSection.appendChild(newComment);
+            document.getElementById('comment-text').value = "";
+        }
+    }
+</script>
+
+</body>
+</html>

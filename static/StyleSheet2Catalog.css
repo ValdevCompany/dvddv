@@ -1,0 +1,658 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration:none;
+    list-style-type: none;
+    font-family:sans-serif;
+}
+
+textarea {
+    overflow: hidden;
+}
+
+*::selection {
+    background-color: #2DDBDB;
+    color: white;
+}
+
+body {
+    background-color: #F2F5F5;
+}
+.blocktext{
+    margin-left:108px;
+    padding-top:194px;
+}
+.boxtext {
+    width:600px;
+    text-align:center;
+    color: #00FFC2;
+    border:white 6px solid;
+    border-radius: 60px;
+}
+.menu-icon {
+    margin-top: 110px;
+    width: 130px;
+    height: 14px;
+    cursor: pointer;
+    position: relative;
+    display: none;
+}
+
+    .menu-icon span {
+        border-radius: 100px;
+        background-color: black;
+        height: 10px;
+        position: absolute;
+        width: 100%;
+        left: 30px;
+        transition: all 0.3s ease;
+    }
+
+        .menu-icon span:first-child {
+            top: 30px;
+        }
+
+        .menu-icon span:nth-child(2) {
+            top: 60px;
+        }
+
+        .menu-icon span:last-child {
+            top: 90px;
+        }
+
+    .menu-icon:hover span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-icon:hover span:first-child,
+    .menu-icon:hover span:last-child {
+        top: 6px;
+        background-color: red;
+    }
+
+    .menu-icon:hover span:first-child {
+        transform: rotate(45deg);
+    }
+
+    .menu-icon:hover span:last-child {
+        transform: rotate(-45deg);
+    }
+
+
+
+.heder1 {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    background: rgba(217, 217, 217, 0);
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(12.3px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+.logo {
+    width: 243px;
+    height: 80px;
+    background-repeat: no-repeat;
+}
+
+.about {
+    background-color: #C0BABA;
+    box-shadow: 0px 0px 50px 4px rgba(34, 60, 80, 0.2);
+    width: 160px;
+    height: 48px;
+    border-radius: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+    .about:hover {
+        background-color: #0B0A0A;
+        color: #D3D3D3;
+    }
+
+.buttom1 {
+    color: #D3D3D3;
+    font-size: 36px;
+    text-decoration: none;
+    width: 170px;
+    height: 50px;
+    text-align: center;
+}
+
+    .buttom1:hover {
+        color: black;
+    }
+
+.trends {
+    box-shadow: 0px 0px 50px 4px rgba(34, 60, 80, 0.2);
+    width: 172px;
+    height: 48px;
+    background-color: #C0BABA;
+    border-radius: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.buttom2 {
+    color: black;
+    font-size: 36px;
+    text-decoration: none;
+    width: 170px;
+    height: 50px;
+    text-align: center;
+}
+
+.trends:hover {
+    background-color: #0B0A0A;
+    color: #D3D3D3;
+}
+
+.buttom2:hover {
+    color: #D3D3D3;
+}
+
+.catalog {
+    box-shadow: 0px 0px 50px 4px rgba(34, 60, 80, 0.2);
+    width: 172px;
+    height: 48px;
+    background-color: #0B0A0A;
+    border-radius: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+    .catalog:hover {
+        background-color: #C0BABA;
+        color: black;
+    }
+
+form {
+    width: auto;
+    float: right;
+    margin-right: 30px;
+}
+
+input {
+    width: 320px;
+    height: 48px;
+    padding-left: 15px;
+    border-radius: 42px;
+    background: #C0BABA;
+    outline: none;
+    position: relative;
+    transition: .3s linear;
+    font-size: 36px;
+    color: black;
+    border: none;
+}
+
+    input:focus {
+        width: 330px;
+        background: #DED7D7;
+    }
+
+submit {
+    width: 42px;
+    height: 42px;
+    background: none;
+    border: none;
+    position: absolute;
+    top: -2px;
+    right: 0;
+}
+
+    submit:before {
+        content: "\f002";
+        font-family: FontAwesome;
+        color: #324b4e;
+    }
+
+input:hover {
+    background-color: #0B0A0A;
+    color: white;
+}
+.search-button {
+    background-color: #007bff; /* Синий цвет кнопки */
+    color: white; /* Белый цвет текста */
+    padding: 12px 20px; /* Отступы внутри кнопки */
+    border: none; /* Убираем границу */
+    cursor: pointer; /* Изменяем курсор при наведении */
+    border-radius: 8px; /* Закругляем углы */
+    transition: background-color 0.3s; /* Анимация при наведении */
+    font-size: 16px; /* Размер шрифта */
+}
+
+.search-button:hover {
+    background-color: #0056b3; /* Темно-синий цвет при наведении */
+}
+
+
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+.lupa {
+    width: 44px;
+    height: 44px;
+    background-image: url("lupa.png");
+    cursor: pointer;
+}
+
+.logoP {
+    font-family: 'Imperial Web.ttf';
+    font-size: 60px;
+    font-weight: 1000;
+
+}
+
+.ava {
+    width: 74px;
+    height: 74px;
+    background-image: url("profile.png");
+    background-repeat: no-repeat;
+    background-size: 70px;
+}
+
+.d1 {
+    width: auto;
+    height: auto;
+    background-color: #3DD4C4;
+    border: solid black 3px;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.a1 {
+    text-align: center;
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: white;
+    font-size: 36px;
+}
+
+.a2 {
+    text-align: center;
+    text-decoration: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: black;
+    font-size: 36px;
+}
+
+.d2 {
+    margin-left: 30px;
+    width: auto;
+    height: auto;
+    border: solid black 3px;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.d3 {
+    margin-left: 30px;
+    width: 100px;
+    height: auto;
+    border-radius: 60px;
+}
+
+.scrollable-element {
+    padding-top: 80px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    width: auto;
+    overflow-x: auto; /* Enable horizontal scrolling */
+}
+
+/* Remove overflow: hidden from textarea */
+textarea {
+    /* ... other styles */
+}
+
+/* Custom scrollbar styles (consider using a library for broader compatibility) */
+::-webkit-scrollbar {
+    background: transparent;
+    height: 10px;
+    width: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 104.25rem;
+    background: #c2c2c2d7;
+    width: 10px;
+}
+
+.footer {
+    margin-top: 100px;
+    float: right;
+    width: 1322px;
+    height: 775px;
+    background-color: black;
+    border-top-left-radius: 160px;
+    box-shadow: 0px 0px 50px 4px rgba(34, 60, 80, 0.2);
+}
+.mt-5 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+}
+.section {
+   
+}
+.nav.nav-tabs {
+    display: flex;
+
+}
+.nav-item {
+    margin-left: 30px;
+    width: auto;
+    height: auto;
+    border: solid black 3px;
+    border-radius: 60px;
+    display: flex;
+    align-items: center;
+    transition: 0.5s;
+}
+.nav-link {
+    text-align: center;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: black;
+    font-size: 36px;
+}
+.nav-item:hover {
+    background-color: black;
+    transition: 0.5s;
+    border-radius: 50px;
+}
+.nav-link:hover {
+    color: white;
+    transition: 0.5s;
+    border-radius: 50px;    
+}
+.tab-pane.fade.active.show {
+    display: block;
+}
+.tab-pane.fade {
+    display: none;    
+}
+.nav-link.active {
+    background: #2DDBDB;
+    border-radius: 50px;
+    color:white;
+    transition:0.5s;
+}
+.nav.nav-tabs {
+    margin-bottom: 40px;
+}
+a{
+    color:black;
+
+}
+.blocktext{
+    margin-left:108px;
+    padding-top:194px;
+}
+.boxtext {
+    width:600px;
+    text-align:center;
+    color: #00FFC2;
+    border:white 6px solid;
+    border-radius: 60px;
+}
+.menu-icon {
+    margin-top: 110px;
+    width: 130px;
+    height: 14px;
+    cursor: pointer;
+    position: relative;
+    display: none;
+}
+
+    .menu-icon span {
+        border-radius: 100px;
+        background-color: black;
+        height: 10px;
+        position: absolute;
+        width: 100%;
+        left: 30px;
+        transition: all 0.3s ease;
+    }
+
+        .menu-icon span:first-child {
+            top: 30px;
+        }
+
+        .menu-icon span:nth-child(2) {
+            top: 60px;
+        }
+
+        .menu-icon span:last-child {
+            top: 90px;
+        }
+
+    .menu-icon:hover span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-icon:hover span:first-child,
+    .menu-icon:hover span:last-child {
+        top: 6px;
+        background-color: red;
+    }
+
+    .menu-icon:hover span:first-child {
+        transform: rotate(45deg);
+    }
+
+    .menu-icon:hover span:last-child {
+        transform: rotate(-45deg);
+    }
+
+#menuToggle {
+    top: 8px;
+    left: 8px;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+    #menuToggle a {
+        text-decoration: none;
+        color: #232323;
+        transition: color 0.3s ease;
+    }
+
+        #menuToggle a:hover {
+            color: tomato;
+        }
+
+
+    #menuToggle input {
+        display: block;
+        width: 108px;
+        height: 74px;
+        position: absolute;
+        top: -7px;
+        left: -5px;
+        cursor: pointer;
+        opacity: 0; /* hide this */
+        z-index: 2; /* and place it over the hamburger */
+
+        -webkit-touch-callout: none;
+    }
+
+    #menuToggle span {
+        display: block;
+        width: 60px;
+        height: 15px;
+        margin-bottom: 5px;
+        position: relative;
+        background: #cdcdcd;
+        border-radius: 3px;
+        z-index: 1;
+        transform-origin: 4px 0px;
+        transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease;
+    }
+
+        #menuToggle span:first-child {
+            transform-origin: 0% 0%;
+        }
+
+        #menuToggle span:nth-last-child(2) {
+            transform-origin: 0% 100%;
+        }
+
+    #menuToggle input:checked ~ span {
+        opacity: 1;
+        transform: rotate(45deg) translate(-2px, -1px);
+        background: #232323;
+    }
+
+        #menuToggle input:checked ~ span:nth-last-child(3) {
+            opacity: 0;
+            transform: rotate(0deg) scale(0.2, 0.2);
+        }
+
+        #menuToggle input:checked ~ span:nth-last-child(2) {
+            transform: rotate(-45deg) translate(0, -1px);
+        }
+
+#menu {
+    width: 135px;
+    position: absolute;
+    margin: -100px 0 0 -50px;
+    padding: 60px;
+    padding-top: 199px;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+    /* to stop flickering of text in safari */
+    position: fixed;
+    background: rgba(217, 217, 217, 0);
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(480px);
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+    #menu li {
+        padding: 10px 0;
+        font-size: 22px;
+    }
+
+#menuToggle input:checked ~ ul {
+    transform: none;
+}
+
+
+@media only screen and (min-width: 100px) and (max-width: 1000px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .heder1 {
+        display: none;
+    }
+
+
+
+    .Z {
+        width: 130%;
+        font-size: 150px;
+    }
+
+    .blockblue {
+        display: none;
+    }
+
+    .footer {
+        width: 1246px;
+        float: none;
+        height: 1450px;
+    }
+
+    .Pz1 {
+        padding: 50px;
+        width: 80%;
+    }
+
+    .about {
+        width: 330px;
+        height: 140px;
+    }
+
+    .logoP {
+        font-family: 'Imperial Web.ttf'; 
+        font-size: 60px;
+        font-weight: 1000;
+        
+    }
+
+    .buttom2 {
+        font-size: 45px;
+        text-decoration: none;
+        width: 298px;
+        height: 126px;
+    }
+
+
+
+    .trends {
+        width: 440px;
+        height: 140px;
+    }
+
+    .catalog {
+        width: 440px;
+        height: 140px;
+    }
+
+    .ava {
+        width: 96px;
+        height: 96px;
+        background-image: url(profile.png);
+        background-repeat: no-repeat;
+        background-size: 96px;
+    }
+
+    .logo {
+        height: 74px;
+    }
+
+    #menuToggle {
+        display: block;
+    }
+	.nav-link {
+font-size: 16px;
+}
+.nav-link.active {
+height: 36px;
+}
+    .nav-item {
+        margin: -1px; /* Уменьшить отступы между элементами */
+    }
+	
+}

@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="{{ url_for('static', filename='StyleSheet3Register.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='logo.png') }}" rel="icon" />
+    <meta charset="utf-8" />
+    <title>Велий-Регистрация</title>
+    <script src="{{ url_for('static', filename='ScriptRegister.js') }}"></script>
+</head>
+<body>
+
+    <h2>аккаунт в <a href="#"></a>велий</h2>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form action="{{ url_for('login')  }}" method="POST">
+                <h1>Создать аккаунт</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>или используйте ваш email</span>
+                <input type="text" placeholder="имя" name = "username" />
+                <input type="email" placeholder="email" name = "email" />
+                <input type="password" placeholder="пароль" name = "password" />
+                <button>зарегистрироваться</button>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form action="{{ url_for('login') }}" method="POST">
+                <h1>Войти</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>или самостоятельно</span>
+                <input type="email" placeholder="email" name="email"/>
+                <input type="password" placeholder="пароль" name="password" />
+                <a href="#">Забыли пароль?</a>
+                <button type="submit">войти</button>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Здраствуйте</h1>
+                    <p>если у вас уже есть аккаунт нажмите кнопку войти</p>
+                    <button class="ghost" id="signIn">войти</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Добро пожаловать</h1>
+                    <p>введите свои данные и начните работу в велий</p>
+                    <button class="ghost" id="signUp">зарегистрироваться</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>
+            вводя свои данные или находясь на странице вы соглашаетесь с нашей
+            <a target="_blank" href="{{ url_for('support') }}">политикой конфиденциальности</a>
+        </p>
+    </footer>
+
+    <script>
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const container = document.getElementById('container');
+
+        signUpButton.addEventListener('click', () => {
+            container.classList.add("right-panel-active");
+        });
+
+        signInButton.addEventListener('click', () => {
+            container.classList.remove("right-panel-active");
+        });
+
+    </script>
+</body>
+</html>

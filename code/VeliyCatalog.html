@@ -1,0 +1,447 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <link href="{{ url_for('static', filename='StyleSheet2Catalog.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='logo.png') }}" rel="icon" />
+    <meta charset="utf-8" />
+    <script src="{{ url_for('static', filename='ScriptCatalog.js') }}"></script>
+    <title>Велий-Каталог</title>
+</head>
+<body>
+    <span class="heder1">
+        <div class="logo"><p class="logoP">велий</p></div>
+        <div class="about"><a href="{{ url_for('Support') }}" class="buttom2">о нас</a></div>
+        <div class="trends"><a href="{{ url_for('Trends') }}" class="buttom2">течения</a></div>
+        <div class="catalog"><a href="Catalog" class="buttom1">каталог</a></div>
+        <div class="search">
+            <form>
+                <input type="text" placeholder="поиск">
+
+            </form>
+        </div>
+        <div class="lupa"><button type="submit"></button></div>
+        <a href="{{ url_for('Login') }}"><div class="ava"></div></a>
+    </span>
+    <!--<div class="scrollable-element">
+        <button class="d1"><a href="#" class="a1">биология</a></button>
+        <button class="d2"><a href="#" class="a2">ЧиО</a></button>
+
+
+        <button class="d2"><a href="#" class="a2">география</a></button>
+        <button class="d2"><a href="#" class="a2">история</a></button>
+        <button class="d2"><a href="#" class="a2">литература</a></button>
+        <button class="d2"><a href="#" class="a2">геометрия</a></button>
+        <button class="d2"><a href="#" class="a2">геометрия</a></button>
+        <button class="d2"><a href="#" class="a2">геометрия</a></button>
+        <button class="d2"><a href="#" class="a2">геометрия</a></button>
+        <button class="d1"><a href="#" class="a1">биология</a></button>
+        <button class="d2"><a href="#" class="a2">ЧиО</a></button>
+
+        <button class="d2"><a href="#" class="a2">география</a></button>
+        <button class="d2"><a href="#" class="a2">история</a></button>
+        <button class="d2"><a href="#" class="a2">литература</a></button>
+        <button class="d2"><a href="#" class="a2">геометрия</a></button>
+        <button class="d2"><a href="#" class="a2">геометрия</a></button>
+        <button class="d2"><a href="#" class="a2">геометрия</a></button>
+        <button class="d2"><a href="#" class="a2">геометрия</a></button>
+        <button class="d3"></button>
+    </div>
+    <div class="tagger">
+        <div class="biology">
+            <p class="Z">биология</p>
+            <div class="wrapper">
+                <i id="left" class="fa-solid  fas fa-angle-left"></i>
+                <ul class="carousel">
+                    <li class="card">
+                        <div class="img">
+                            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png"
+                                 alt="" draggable="false">
+                        </div>
+                        <h2 style="color: green; font-weight:bold;">
+                            GeeksforGeeks
+                        </h2>
+                        <span>Coding Platform</span>
+                    </li>
+                    <li class="card">
+                        <div class="img">
+                            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png"
+                                 alt="" draggable="false">
+                        </div>
+                        <h2 style="color: green; font-weight:bold;">GeeksforGeeks</h2>
+                        <span>Coding Platform</span>
+                    </li>
+                    <li class="card">
+                        <div class="img">
+                            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png"
+                                 alt="" draggable="false">
+                        </div>
+                        <h2 style="color: green; font-weight:bold;">GeeksforGeeks</h2>
+                        <span>Coding Platform</span>
+                    </li>
+                    <li class="card">
+                        <div class="img">
+                            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png"
+                                 alt="" draggable="false">
+                        </div>
+                        <h2 style="color: green; font-weight:bold;">GeeksforGeeks</h2>
+                        <span>Coding Platform</span>
+                    </li>
+                    <li class="card">
+                        <div class="img">
+                            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png"
+                                 alt="" draggable="false">
+                        </div>
+                        <h2 style="color: green; font-weight:bold;">GeeksforGeeks</h2>
+                        <span>Coding Platform</span>
+                    </li>
+                    <li class="card">
+                        <div class="img">
+                            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240213150115/ppp.png"
+                                 alt="" draggable="false">
+                        </div>
+                        <h2 style="color: green; font-weight:bold;">GeeksforGeeks</h2>
+                        <span>Coding Platform</span>
+                    </li>
+                </ul>
+                <i id="right" class="fa-solid fas fa-angle-right"></i>
+            </div>
+        </div>
+
+
+    </div>-->
+	<nav role="navigation">
+        <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+                <a href="{{ url_for('main') }}"><div class="logo"><p class="logoP">велий</p></div></a>
+                <a href="{{ url_for('support') }}" class="buttom2">о нас</a>
+                <a href="{{ url_for('trends') }}" class="buttom2">течения</a>
+                <a href="{{ url_for('presentations') }}" class="buttom2">каталог</a>
+                <a href="{{ url_for('login') }}"><div class="ava"></div></a>
+            </ul>
+        </div>
+    </nav>
+    <div class="Zagalovok"><h1 class="h1Z">рекомендуем</h1> <div class="filtr">фильтр</div></div>
+    <div class="content">
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="content">
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="content">
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+    </div>
+    <h1 class="h1Z">последние</h1>
+    <div class="content">
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+    </div>
+    <div class="content">
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+    </div>
+    <div class="content">
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+        <div class="cards">
+            <div class="presents"></div>
+            <div class="dis">
+                <div class="avaMini"></div>
+                <div class="podText"><h3>название</h3><p>автор</p></div>
+            </div>
+
+        </div>
+    </div>
+    <div class="footer">
+        <p class="Pz1">
+            все права защищены 2023 ©
+        </p>
+        <p class="Pz1">
+            Машанский Богдан ©
+        </p>
+        <p class="Pz1">
+            Балтабаев Алишер ©
+        </p>
+    </div>
+
+</body>
+</html>

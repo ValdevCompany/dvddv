@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Загрузка файлов</title>
+    <meta name="description" content="Легко загружайте свои файлы с помощью нашего интерфейса drag-and-drop.">
+    <meta name="keywords" content="загрузка файлов, drag and drop, простая загрузка, интерфейс загрузки">
+    <meta name="author" content="Ваше имя">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+        }
+
+        .upload-container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            width: 400px;
+        }
+
+        .upload-container h1 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 24px;
+        }
+
+        .upload-box {
+            border: 2px dashed #007BFF;
+            border-radius: 10px;
+            padding: 20px;
+            background: white;
+            cursor: pointer;
+            transition: background 0.3s, border-color 0.3s;
+            margin-bottom: 20px;
+        }
+
+        .upload-box:hover {
+            background: #f1f1f1;
+            border-color: #0056b3;
+        }
+
+        .upload-box input[type="file"] {
+            display: none;
+        }
+
+        .upload-label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .upload-icon {
+            font-size: 48px;
+            color: #007BFF;
+            margin-bottom: 10px;
+        }
+
+        .upload-text {
+            font-size: 16px;
+            color: #007BFF;
+        }
+
+        .input-field {
+            margin-bottom: 15px;
+        }
+
+        .input-field label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .input-field input[type="text"],
+        .input-field textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .input-field textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .privacy-field {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .privacy-field label {
+            margin-right: 10px;
+            color: #333;
+        }
+
+        .submit-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-container">
+        <h1>Загрузка ваших файлов</h1>
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+            <div class="input-field">
+                <label for="title">Название:</label>
+                <input type="text" id="title" name="title" placeholder="Введите название">
+            </div>
+            <div class="input-field">
+                <label for="tags">Теги:</label>
+                <input type="text" id="tags" name="tags" placeholder="Введите теги, разделённые запятыми">
+            </div>
+            <div class="input-field">
+                <label for="description">Описание:</label>
+                <textarea id="description" name="description" placeholder="Введите описание"></textarea>
+            </div>
+            <div class="privacy-field">
+                <input type="checkbox" id="privacy" name="privacy">
+                <label for="privacy">Приватность файла</label>
+            </div>
+            <div class="upload-box">
+                <input type="file" id="fileInput" name="fileInput" multiple accept=".docx, .pptx, .pdf, .doc, .rtf, .ppt">
+                <label for="fileInput" class="upload-label">
+                    <span class="upload-icon">&#8682;</span>
+                    <span class="upload-text">Перетащите файлы или нажмите для загрузки (допустимые форматы: .docx, .pptx, .pdf, .doc, .rtf, .ppt)</span>
+                </label>
+            </div>
+            <button type="submit" class="submit-btn">Отправить</button>
+        </form>
+    </div>
+</body>
+</html>

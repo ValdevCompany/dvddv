@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link href="{{ url_for('static', filename='StyleSheet5home.css') }}" rel="stylesheet" />
+    <link href="{{ url_for('static', filename='logo.png') }}" rel="icon" />
+    <meta charset="utf-8" />
+    <title>Главная</title>
+    <script src="{{ url_for('static', filename='Scripthome.js') }}"></script>
+</head>
+<body>
+<nav role="navigation">
+        <div id="menuToggle">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+            <ul id="menu">
+                <a href="{{ url_for('main') }}"><div class="logo"><p class="logoP">велий</p></div></a>
+                <a href="{{ url_for('support') }}" class="buttom2">о нас</a>
+                <a href="{{ url_for('trends') }}" class="buttom2">течения</a>
+                <a href="{{ url_for('presentations') }}" class="buttom2">каталог</a>
+                <a href="{{ url_for('login') }}"><div class="ava"></div></a>
+            </ul>
+        </div>
+    </nav>
+    <span class="heder1">
+        <a href="{{ url_for('main') }}"><div class="logo"><p class="logoP">велий</p></div></a>
+        <div class="about"><a href="{{ url_for('support') }}" class="buttom2">о нас</a></div>
+        <div class="trends"><a href="{{ url_for('trends') }}" class="buttom2">течения</a></div>
+        <div class="catalog"><a href="{{ url_for('presentations') }}" class="buttom2">каталог</a></div>
+
+        <a href="{{ url_for('login') }}"><div class="ava"></div></a>
+    </span>
+    <div class="content">
+        <h1 class="Z">делитесь</h1>
+        <h1 class="Z">и пользуйтесь!</h1>
+        <div class="presentblock">
+            <div class="present1"></div>
+            <div class="present2"></div>
+        </div>
+        <h1 class="Z">любая презентация</h1>
+        <h1 class="Z">в вашем кармане</h1>
+        <p class="Pz">
+            сохраняйте свои презентации на сайте и делитесь  с другими!
+            Следите за трендами и стилями работ лучших авторов
+        </p>
+    </div>
+    <div class="blockblue">
+        <div class="blocktext">
+            <h1 class="Z">нет возможности?</h1>
+            <h1 class="Z">времени? желания?</h1>
+            <div class="boxtext"><h1 class="Z">скачайте</h1></div>
+            <p class="Pz">учителя, студенты, менторы, да кто угодно, могут поделиться или скачать любую презентацию бесплатно</p>
+        </div>
+
+    </div>
+    <div class="footer">
+        <p class="Pz1">
+            все права защищены 2024 ©
+        </p>
+        <p class="Pz1">
+            Машанский Богдан ©
+        </p>
+        <p class="Pz1">
+            Балтабаев Алишер ©
+        </p>
+    </div>  
+</body>
+</html>

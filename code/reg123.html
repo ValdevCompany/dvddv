@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Registration</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='StyleSheetRegistr2.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='logo.png') }}">
+</head>
+<body>
+    <div class="load"></div>
+
+    <header>
+        <div class="logo">
+            <a href="#">
+                <img src="{{ url_for('static', filename='logo.png') }}" alt="Google Logo">
+            </a>
+        </div>
+        <nav>
+            <a href="{{ url_for('about') }}" class="navigation-link">About</a>
+            <a href="{{ url_for('trends') }}" class="navigation-link">Trends</a>
+            <a href="{{ url_for('catalog') }}" class="navigation-link">Catalog</a>
+            <a href="register.html"><div class="ava"></div></a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="box1">
+            <div class="boxZ">
+                <p class="pZ">Registration via:</p>
+            </div>
+            <div class="box">
+                <a href="#" class="social">
+                    <img src="google_icon.svg" alt="Google Icon">
+                </a>
+                <!-- Add similar social media icons for other platforms -->
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p class="pZsmall">
+            By entering your information or being on this page, you agree to our <a href="#" class="pZsmall">privacy policy</a>.
+        </p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link href="{{ url_for('static', filename='logo.png') }}" rel="icon" />
+    <title>Велий-Ошибка</title>
+</head>
+<body>
+
+    <style>
+        body {
+            background-color: #F2F5F5;
+            line-height:5px;
+        }
+        .error{
+            width:390px;
+        }
+        h1{
+            font-size: 110px;
+        }
+        p {
+            font-size: 70px;
+        }
+    </style>
+    <img src="{{ url_for('static', filename='error.png') }}" alt="" class="error"/>
+    <h1>бим-бом-бам</h1>
+    <p>ошибка #404 </p>
+</body>
+</html>
